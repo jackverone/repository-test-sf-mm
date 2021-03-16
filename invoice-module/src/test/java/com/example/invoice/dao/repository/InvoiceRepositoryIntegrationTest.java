@@ -1,5 +1,6 @@
-package com.example.invoice.dao;
+package com.example.invoice.dao.repository;
 
+import com.example.invoice.config.InvoiceTestContextConfiguration;
 import com.example.invoice.dao.entity.InvoiceEntity;
 import com.example.invoice.dao.repository.InvoiceRepository;
 import org.junit.jupiter.api.Test;
@@ -13,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-@SpringBootTest
+@SpringBootTest(classes = {InvoiceTestContextConfiguration.class})
 class InvoiceRepositoryIntegrationTest {
 
     private static final int INVOICE_LIST_SIZE_1 = 1;
@@ -40,7 +41,7 @@ class InvoiceRepositoryIntegrationTest {
         );
     }
 
-    @SpringBootApplication
-    static class TestConfiguration {
-    }
+//    @SpringBootApplication
+//    static class TestConfiguration {
+//    }
 }
